@@ -10,12 +10,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        // Data init
+        // data init
         val myDataset = Datasource().loadAffirmations()
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
 
-        recyclerView.adapter = ItemAdapter(this, myDataset)
-        recyclerView.setHasFixedSize(true)
+        val recycleView = findViewById<RecyclerView>(R.id.recycler_view)
+        recycleView.adapter = ItemAdapter(this, myDataset)
+        recycleView.setHasFixedSize(true)
     }
 }
